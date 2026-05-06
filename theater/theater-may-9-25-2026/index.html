@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Warsaw Theater · May 9–25, 2026</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 0 1em 3em; color: #222; line-height: 1.55; background: #fafafa; }
+    .hero { padding: 2.5em 0 1.5em; border-bottom: 2px solid #6a1b9a; margin-bottom: 2em; }
+    .hero h1 { margin: 0 0 0.2em; font-size: 2em; color: #6a1b9a; }
+    .hero-sub { margin: 0 0 0.6em; font-size: 1.1em; color: #555; font-weight: 500; }
+    .hero-meta { margin: 0; color: #777; font-size: 0.95em; }
+    .toc { margin: 1.5em 0 0; padding: 0.6em 0.9em; background: #fff; border: 1px solid #eee; border-radius: 6px; font-size: 0.9em; }
+    .toc a { color: #6a1b9a; text-decoration: none; margin-right: 0.8em; font-weight: 600; }
+    .toc a:hover { text-decoration: underline; }
+    .category { margin: 0 0 2em; }
+    .category > h2 { font-size: 1.4em; margin: 1.5em 0 0.6em; padding-bottom: 0.3em; border-bottom: 1px solid #ddd; color: #6a1b9a; }
+    .category > h2 .cat-pl { color: #888; font-weight: 400; font-size: 0.85em; margin-left: 0.4em; }
+    .cat-comedy   > h2 { color: #ef6c00; border-bottom-color: #ef6c00; }
+    .cat-drama    > h2 { color: #c62828; border-bottom-color: #c62828; }
+    .cat-musicals > h2 { color: #2e7d32; border-bottom-color: #2e7d32; }
+    .cat-other    > h2 { color: #455a64; border-bottom-color: #455a64; }
+    .show { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 1.1em 1.4em; margin-bottom: 1em; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+    .show h3 { margin: 0 0 0.3em; color: #222; font-size: 1.15em; }
+    .show .venue { margin: 0 0 0.6em; color: #555; font-size: 0.95em; }
+    .show .venue a { color: #6a1b9a; font-weight: 600; text-decoration: none; }
+    .show .venue a:hover { text-decoration: underline; }
+    .show .venue .addr { display: block; color: #777; font-size: 0.9em; margin-top: 0.1em; }
+    .show .dates { margin: 0.5em 0; padding: 0.5em 0.8em; background: #faf5ff; border-left: 3px solid #6a1b9a; border-radius: 0 4px 4px 0; }
+    .show .label { font-weight: 600; color: #555; margin: 0 0 0.2em; font-size: 0.9em; }
+    .show .label .label-pl { color: #888; font-weight: 400; }
+    .show .datelist { list-style: none; margin: 0; padding: 0; }
+    .show .datelist li { padding: 0.15em 0; font-size: 0.95em; color: #333; }
+    .show .datelist time { font-weight: 600; color: #444; }
+    .show .cta { margin: 0.8em 0 0; }
+    .btn { display: inline-block; padding: 0.5em 1em; background: #6a1b9a; color: #fff; text-decoration: none; border-radius: 4px; font-weight: 600; font-size: 0.9em; }
+    .btn:hover { background: #4a126b; }
+    .btn .btn-pl { font-weight: 400; opacity: 0.85; margin-left: 0.4em; font-size: 0.9em; }
+    .cat-comedy   .show .dates { border-left-color: #ef6c00; background: #fff8f0; } .cat-comedy   .btn { background: #ef6c00; } .cat-comedy   .btn:hover { background: #b14f00; } .cat-comedy   .show .venue a { color: #ef6c00; }
+    .cat-drama    .show .dates { border-left-color: #c62828; background: #fff5f5; } .cat-drama    .btn { background: #c62828; } .cat-drama    .btn:hover { background: #8e1c1c; } .cat-drama    .show .venue a { color: #c62828; }
+    .cat-musicals .show .dates { border-left-color: #2e7d32; background: #f4faf4; } .cat-musicals .btn { background: #2e7d32; } .cat-musicals .btn:hover { background: #1f5523; } .cat-musicals .show .venue a { color: #2e7d32; }
+    .cat-other    .show .dates { border-left-color: #455a64; background: #f5f7f8; } .cat-other    .btn { background: #455a64; } .cat-other    .btn:hover { background: #2e3d44; } .cat-other    .show .venue a { color: #455a64; }
+    .empty-msg { color: #999; font-style: italic; padding: 0.8em 0; margin: 0; }
+    .empty-msg .empty-msg-pl { color: #bbb; margin-left: 0.4em; }
+    .notes { margin-top: 2.5em; padding: 1.25em 1.5em; background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; }
+    .notes h2 { margin: 0 0 0.8em; color: #6a1b9a; font-size: 1.2em; border-bottom: 1px solid #eee; padding-bottom: 0.4em; }
+    .notes h3 { margin: 0.8em 0 0.3em; color: #555; font-size: 0.95em; text-transform: uppercase; letter-spacing: 0.05em; }
+    .notes-pl h3 { color: #d32f2f; }
+    .notes ul { margin: 0.3em 0 0; padding-left: 1.3em; }
+    .notes li { margin: 0.3em 0; font-size: 0.93em; }
+    footer { margin-top: 2em; text-align: center; color: #999; font-size: 0.85em; }
+    footer a { color: #999; }
+    @media (max-width: 600px) { body { padding: 0 0.8em 2em; } .hero { padding: 1.5em 0 1em; } .hero h1 { font-size: 1.5em; } .show { padding: 0.9em 1em; } }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>Warsaw Theater</h1>
+    <p class="hero-sub">Teatr w Warszawie</p>
+    <p class="hero-meta">2 adults · May 9–25, 2026 · all categories · searched 2026-05-06 · 66 shows</p>
+    <p class="toc"><a href="#comedy">Comedy</a><a href="#drama">Drama &amp; Tragedy</a><a href="#musicals">Musicals</a><a href="#other">Other</a></p>
+  </header>
+
+  <main>
+
+    <section id="comedy" class="category cat-comedy">
+      <h2>Comedy <span class="cat-pl">· Komedia</span></h2>
+
+      <article class="show">
+        <h3>Ostra Jazda</h3>
+        <p class="venue"><a href="https://scenarelax.pl" target="_blank" rel="noopener">Scena Relax</a><span class="addr">ul. Złota 8, Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-10">Sun, 2026-05-10</time> — 15:00, 18:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://www.ebilet.pl/teatr/komedia/ostra-jazda" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>EDUKUJĄC RITĘ</h3>
+        <p class="venue"><a href="https://www.teatr6pietro.pl/" target="_blank" rel="noopener">Teatr 6. Piętro</a><span class="addr">Pałac Kultury i Nauki, Plac Defilad 1, 00-901 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-10">Sun, 2026-05-10</time> — 18:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatr6pietro.pl/rezerwacja/miejsca.html?id=2208&amp;identyfikator=248f73eb04442cd2d7342d8dfee99286&amp;d=3" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>ZAGRAJ TO JESZCZE RAZ, SAM</h3>
+        <p class="venue"><a href="https://www.teatr6pietro.pl/" target="_blank" rel="noopener">Teatr 6. Piętro</a><span class="addr">Pałac Kultury i Nauki, Plac Defilad 1, 00-901 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-11">Mon, 2026-05-11</time> — 19:30</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatr6pietro.pl/rezerwacja/miejsca.html?id=2314&amp;identyfikator=54d46421e4735b55f9dcbcdb04917167&amp;d=3" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Kłamstewka</h3>
+        <p class="venue"><a href="https://teatrkwadrat.pl/" target="_blank" rel="noopener">Teatr Kwadrat im. Edwarda Dziewońskiego</a><span class="addr">ul. Marszałkowska 138, 00-004 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-09">Sat, 2026-05-09</time> — 19:00</li>
+            <li><time datetime="2026-05-10">Sun, 2026-05-10</time> — 18:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrkwadrat.pl/miejsca.html?id=5136" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Żegnaj, panie Szekspir!</h3>
+        <p class="venue"><a href="https://teatrkwadrat.pl/" target="_blank" rel="noopener">Teatr Kwadrat im. Edwarda Dziewońskiego</a><span class="addr">ul. Marszałkowska 138, 00-004 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-12">Tue, 2026-05-12</time> — 19:00</li>
+            <li><time datetime="2026-05-13">Wed, 2026-05-13</time> — 19:00</li>
+            <li><time datetime="2026-05-14">Thu, 2026-05-14</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrkwadrat.pl/miejsca.html?id=5138" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Roma i Julian</h3>
+        <p class="venue"><a href="https://teatrkwadrat.pl/" target="_blank" rel="noopener">Teatr Kwadrat im. Edwarda Dziewońskiego</a><span class="addr">ul. Marszałkowska 138, 00-004 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-13">Wed, 2026-05-13</time> — 19:30</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrkwadrat.pl/miejsca.html?id=5141" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Gra w randki</h3>
+        <p class="venue"><a href="https://teatrkwadrat.pl/" target="_blank" rel="noopener">Teatr Kwadrat im. Edwarda Dziewońskiego</a><span class="addr">ul. Marszałkowska 138, 00-004 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-17">Sun, 2026-05-17</time> — 18:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrkwadrat.pl/miejsca.html?id=5148" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Moja kochana Judith</h3>
+        <p class="venue"><a href="https://teatrkwadrat.pl/" target="_blank" rel="noopener">Teatr Kwadrat im. Edwarda Dziewońskiego</a><span class="addr">ul. Marszałkowska 138, 00-004 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-19">Tue, 2026-05-19</time> — 19:00</li>
+            <li><time datetime="2026-05-20">Wed, 2026-05-20</time> — 19:00</li>
+            <li><time datetime="2026-05-21">Thu, 2026-05-21</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrkwadrat.pl/miejsca.html?id=5147" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Każdy twój telefon</h3>
+        <p class="venue"><a href="https://teatrkwadrat.pl/" target="_blank" rel="noopener">Teatr Kwadrat im. Edwarda Dziewońskiego</a><span class="addr">ul. Marszałkowska 138, 00-004 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-22">Fri, 2026-05-22</time> — 19:00</li>
+            <li><time datetime="2026-05-23">Sat, 2026-05-23</time> — 19:00</li>
+            <li><time datetime="2026-05-24">Sun, 2026-05-24</time> — 18:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrkwadrat.pl/miejsca.html?id=5155" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Złodziej</h3>
+        <p class="venue"><a href="https://teatrkomedia.pl/" target="_blank" rel="noopener">Teatr Komedia</a><span class="addr">ul. Słowackiego 19a, 01-592 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-09">Sat, 2026-05-09</time> — 15:00, 19:00</li>
+            <li><time datetime="2026-05-10">Sun, 2026-05-10</time> — 16:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrkomedia.pl/numerowane.html?id=3441" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Ich czworo</h3>
+        <p class="venue"><a href="https://teatrkomedia.pl/" target="_blank" rel="noopener">Teatr Komedia</a><span class="addr">ul. Słowackiego 19a, 01-592 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-16">Sat, 2026-05-16</time> — 19:00</li>
+            <li><time datetime="2026-05-17">Sun, 2026-05-17</time> — 16:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrkomedia.pl/numerowane.html?id=3431" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Jak się starzeć bez godności</h3>
+        <p class="venue"><a href="https://teatrkomedia.pl/" target="_blank" rel="noopener">Teatr Komedia</a><span class="addr">ul. Słowackiego 19a, 01-592 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-21">Thu, 2026-05-21</time> — 19:00</li>
+            <li><time datetime="2026-05-22">Fri, 2026-05-22</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrkomedia.pl/numerowane.html?id=3243" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Jak zawsze</h3>
+        <p class="venue"><a href="https://teatrkomedia.pl/" target="_blank" rel="noopener">Teatr Komedia</a><span class="addr">ul. Słowackiego 19a, 01-592 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-23">Sat, 2026-05-23</time> — 15:00, 19:00</li>
+            <li><time datetime="2026-05-24">Sun, 2026-05-24</time> — 16:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrkomedia.pl/numerowane.html?id=3442" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Na prochach</h3>
+        <p class="venue"><a href="https://www.teatrsyrena.pl/" target="_blank" rel="noopener">Teatr Syrena</a><span class="addr">ul. Litewska 3, 00-589 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-22">Fri, 2026-05-22</time> — 19:00</li>
+            <li><time datetime="2026-05-23">Sat, 2026-05-23</time> — 19:00</li>
+            <li><time datetime="2026-05-24">Sun, 2026-05-24</time> — 18:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrsyrena.pl/rezerwacja/numerowane.html?id=4819" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Dzieła wszystkie Szekspira</h3>
+        <p class="venue"><a href="https://scenawspolczesna.pl" target="_blank" rel="noopener">Fundacja Scena Współczesna (Adgar Park West)</a><span class="addr">al. Jerozolimskie 181B, 02-222 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-24">Sun, 2026-05-24</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://www.ebilet.pl/teatr/komedia/dziela-wszystkie-szekspira" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+    </section>
+
+    <section id="drama" class="category cat-drama">
+      <h2>Drama &amp; Tragedy <span class="cat-pl">· Dramat i Tragedia</span></h2>
+
+      <article class="show">
+        <h3>Król Lear</h3>
+        <p class="venue"><a href="https://www.narodowy.pl/" target="_blank" rel="noopener">Teatr Narodowy</a><span class="addr">Plac Teatralny 3, 00-077 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-09">Sat, 2026-05-09</time> — 19:00</li>
+            <li><time datetime="2026-05-10">Sun, 2026-05-10</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.narodowy.pl/rezerwacja/termin.html?id=112" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Czekając na Godota</h3>
+        <p class="venue"><a href="https://www.narodowy.pl/" target="_blank" rel="noopener">Teatr Narodowy</a><span class="addr">Plac Teatralny 3, 00-077 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-09">Sat, 2026-05-09</time> — 19:00</li>
+            <li><time datetime="2026-05-10">Sun, 2026-05-10</time> — 19:00</li>
+            <li><time datetime="2026-05-16">Sat, 2026-05-16</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.narodowy.pl/rezerwacja/termin.html?id=110" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Matka Joanna od Aniołów</h3>
+        <p class="venue"><a href="https://www.narodowy.pl/" target="_blank" rel="noopener">Teatr Narodowy</a><span class="addr">Plac Teatralny 3, 00-077 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-12">Tue, 2026-05-12</time> — 19:00</li>
+            <li><time datetime="2026-05-13">Wed, 2026-05-13</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.narodowy.pl/rezerwacja/termin.html?id=85" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Zaćmienie w dwóch aktach</h3>
+        <p class="venue"><a href="https://www.narodowy.pl/" target="_blank" rel="noopener">Teatr Narodowy</a><span class="addr">Plac Teatralny 3, 00-077 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-14">Thu, 2026-05-14</time> — 19:15</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.narodowy.pl/rezerwacja/termin.html?id=121" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Piekło – Niebo</h3>
+        <p class="venue"><a href="https://www.narodowy.pl/" target="_blank" rel="noopener">Teatr Narodowy</a><span class="addr">Plac Teatralny 3, 00-077 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-16">Sat, 2026-05-16</time> — 16:00</li>
+            <li><time datetime="2026-05-17">Sun, 2026-05-17</time> — 12:00</li>
+            <li><time datetime="2026-05-19">Tue, 2026-05-19</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.narodowy.pl/rezerwacja/termin.html?id=118" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Dziady</h3>
+        <p class="venue"><a href="https://www.narodowy.pl/" target="_blank" rel="noopener">Teatr Narodowy</a><span class="addr">Plac Teatralny 3, 00-077 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-20">Wed, 2026-05-20</time> — 18:30</li>
+            <li><time datetime="2026-05-21">Thu, 2026-05-21</time> — 18:30</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.narodowy.pl/rezerwacja/termin.html?id=48" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Sonata jesienna</h3>
+        <p class="venue"><a href="https://www.narodowy.pl/" target="_blank" rel="noopener">Teatr Narodowy</a><span class="addr">Plac Teatralny 3, 00-077 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-20">Wed, 2026-05-20</time> — 19:00</li>
+            <li><time datetime="2026-05-21">Thu, 2026-05-21</time> — 19:00</li>
+            <li><time datetime="2026-05-22">Fri, 2026-05-22</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.narodowy.pl/rezerwacja/termin.html?id=88" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>JUBILEUSZ</h3>
+        <p class="venue"><a href="https://teatrdramatyczny.pl/" target="_blank" rel="noopener">Teatr Dramatyczny m.st. Warszawy im. Gustawa Holoubka</a><span class="addr">Pałac Kultury i Nauki, pl. Defilad 1, 00-901 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-09">Sat, 2026-05-09</time> — 19:30</li>
+            <li><time datetime="2026-05-10">Sun, 2026-05-10</time> — 17:30</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrdramatyczny.pl/numerowane.html?id=6198" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>ERA WODNIKA</h3>
+        <p class="venue"><a href="https://teatrdramatyczny.pl/" target="_blank" rel="noopener">Teatr Dramatyczny m.st. Warszawy im. Gustawa Holoubka</a><span class="addr">Pałac Kultury i Nauki, pl. Defilad 1, 00-901 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-10">Sun, 2026-05-10</time> — 17:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrdramatyczny.pl/numerowane.html?id=6173" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>ANIOŁY W WARSZAWIE</h3>
+        <p class="venue"><a href="https://teatrdramatyczny.pl/" target="_blank" rel="noopener">Teatr Dramatyczny m.st. Warszawy im. Gustawa Holoubka</a><span class="addr">Pałac Kultury i Nauki, pl. Defilad 1, 00-901 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-16">Sat, 2026-05-16</time> — 19:00</li>
+            <li><time datetime="2026-05-17">Sun, 2026-05-17</time> — 17:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrdramatyczny.pl/numerowane.html?id=6178" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>MÓJ ROK RELAKSU I ODPOCZYNKU</h3>
+        <p class="venue"><a href="https://teatrdramatyczny.pl/" target="_blank" rel="noopener">Teatr Dramatyczny m.st. Warszawy im. Gustawa Holoubka</a><span class="addr">Pałac Kultury i Nauki, pl. Defilad 1, 00-901 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-22">Fri, 2026-05-22</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://teatrdramatyczny.pl/repertuar" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>MUSZENIE</h3>
+        <p class="venue"><a href="https://teatrdramatyczny.pl/" target="_blank" rel="noopener">Teatr Dramatyczny m.st. Warszawy im. Gustawa Holoubka</a><span class="addr">Pałac Kultury i Nauki, pl. Defilad 1, 00-901 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-22">Fri, 2026-05-22</time> — 19:30</li>
+            <li><time datetime="2026-05-23">Sat, 2026-05-23</time> — 19:30</li>
+            <li><time datetime="2026-05-24">Sun, 2026-05-24</time> — 19:30</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://teatrdramatyczny.pl/repertuar" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Nieśmiała Dżokejka</h3>
+        <p class="venue"><a href="https://teatrstudio.pl/pl/" target="_blank" rel="noopener">Teatr Studio</a><span class="addr">Pałac Kultury i Nauki, pl. Defilad 1, 00-901 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-09">Sat, 2026-05-09</time> — 17:00</li>
+            <li><time datetime="2026-05-10">Sun, 2026-05-10</time> — 17:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrstudio.pl/numerowane.html?ter_id=3772&amp;ter_idt=8591b123e844085f57914f52a2731964" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>U mnie wszystko w porządku</h3>
+        <p class="venue"><a href="https://teatrstudio.pl/pl/" target="_blank" rel="noopener">Teatr Studio</a><span class="addr">Pałac Kultury i Nauki, pl. Defilad 1, 00-901 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-09">Sat, 2026-05-09</time> — 19:00</li>
+            <li><time datetime="2026-05-10">Sun, 2026-05-10</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrstudio.pl/numerowane.html?ter_id=3776&amp;ter_idt=95b596c212c628c542be4276fa085592" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>UŚMIERCINY</h3>
+        <p class="venue"><a href="https://teatrstudio.pl/pl/" target="_blank" rel="noopener">Teatr Studio</a><span class="addr">Pałac Kultury i Nauki, pl. Defilad 1, 00-901 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-13">Wed, 2026-05-13</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrstudio.pl/numerowane.html?ter_id=3771&amp;ter_idt=d305fccd43c7e673e6bc5ec996548652" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>The Employees</h3>
+        <p class="venue"><a href="https://teatrstudio.pl/pl/" target="_blank" rel="noopener">Teatr Studio</a><span class="addr">Pałac Kultury i Nauki, pl. Defilad 1, 00-901 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-15">Fri, 2026-05-15</time> — 19:00</li>
+            <li><time datetime="2026-05-22">Fri, 2026-05-22</time> — 19:00</li>
+            <li><time datetime="2026-05-23">Sat, 2026-05-23</time> — 19:00</li>
+            <li><time datetime="2026-05-24">Sun, 2026-05-24</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrstudio.pl/numerowane.html?ter_id=3789&amp;ter_idt=275382ecd9ce738d1f6b6d476fe27261" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Stara kobieta wysiaduje</h3>
+        <p class="venue"><a href="https://teatrstudio.pl/pl/" target="_blank" rel="noopener">Teatr Studio</a><span class="addr">Pałac Kultury i Nauki, pl. Defilad 1, 00-901 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-24">Sun, 2026-05-24</time> — 17:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrstudio.pl/numerowane.html?ter_id=3786&amp;ter_idt=646b219ad1d8cd53dbc2575bdba25356" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Pacyfiści</h3>
+        <p class="venue"><a href="https://wspolczesny.pl/" target="_blank" rel="noopener">Teatr Współczesny</a><span class="addr">ul. Mokotowska 13, 00-640 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-09">Sat, 2026-05-09</time> — 19:00</li>
+            <li><time datetime="2026-05-10">Sun, 2026-05-10</time> — 19:00</li>
+            <li><time datetime="2026-05-22">Fri, 2026-05-22</time> — 19:00</li>
+            <li><time datetime="2026-05-23">Sat, 2026-05-23</time> — 19:00</li>
+            <li><time datetime="2026-05-24">Sun, 2026-05-24</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://biletomat.pl/embedded/rezerwacja/334855?salesChannelId=1b4f0c5c-6ddf-4af9-b37d-dab030a9573d" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>23 i pół godziny</h3>
+        <p class="venue"><a href="https://wspolczesny.pl/" target="_blank" rel="noopener">Teatr Współczesny</a><span class="addr">ul. Mokotowska 13, 00-640 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-09">Sat, 2026-05-09</time> — 19:00</li>
+            <li><time datetime="2026-05-10">Sun, 2026-05-10</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://biletomat.pl/embedded/rezerwacja/334364?salesChannelId=1b4f0c5c-6ddf-4af9-b37d-dab030a9573d" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Kto chce być Żydem ?</h3>
+        <p class="venue"><a href="https://wspolczesny.pl/" target="_blank" rel="noopener">Teatr Współczesny</a><span class="addr">ul. Mokotowska 13, 00-640 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-12">Tue, 2026-05-12</time> — 19:00</li>
+            <li><time datetime="2026-05-13">Wed, 2026-05-13</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://biletomat.pl/embedded/rezerwacja/334348?salesChannelId=1b4f0c5c-6ddf-4af9-b37d-dab030a9573d" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Chłopki</h3>
+        <p class="venue"><a href="https://wspolczesny.pl/" target="_blank" rel="noopener">Teatr Współczesny</a><span class="addr">ul. Mokotowska 13, 00-640 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-15">Fri, 2026-05-15</time> — 19:00</li>
+            <li><time datetime="2026-05-16">Sat, 2026-05-16</time> — 19:00</li>
+            <li><time datetime="2026-05-17">Sun, 2026-05-17</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://biletomat.pl/embedded/rezerwacja/334351?salesChannelId=1b4f0c5c-6ddf-4af9-b37d-dab030a9573d" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Wstyd</h3>
+        <p class="venue"><a href="https://wspolczesny.pl/" target="_blank" rel="noopener">Teatr Współczesny</a><span class="addr">ul. Mokotowska 13, 00-640 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-19">Tue, 2026-05-19</time> — 19:00</li>
+            <li><time datetime="2026-05-20">Wed, 2026-05-20</time> — 19:00</li>
+            <li><time datetime="2026-05-21">Thu, 2026-05-21</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://biletomat.pl/embedded/rezerwacja/334356?salesChannelId=1b4f0c5c-6ddf-4af9-b37d-dab030a9573d" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Fobia</h3>
+        <p class="venue"><a href="https://nowyteatr.org/pl" target="_blank" rel="noopener">Nowy Teatr</a><span class="addr">ul. Madalińskiego 10/16, 02-513 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-12">Tue, 2026-05-12</time> — 19:00</li>
+            <li><time datetime="2026-05-13">Wed, 2026-05-13</time> — 19:00</li>
+            <li><time datetime="2026-05-14">Thu, 2026-05-14</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.nowyteatr.org/nienumerowane.html?id=2999&amp;idt=73c8132c70bc80b80dc9ced32aa36093" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Kwartet</h3>
+        <p class="venue"><a href="https://teatrateneum.pl/" target="_blank" rel="noopener">Teatr Ateneum</a><span class="addr">ul. Stefana Jaracza 2, 00-378 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-17">Sun, 2026-05-17</time> — 18:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://www.ebilet.pl/teatr/tragedia-dramat/kwartet-spektakl" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Iwona, księżniczka Burgunda</h3>
+        <p class="venue"><a href="https://teatrateneum.pl/" target="_blank" rel="noopener">Teatr Ateneum</a><span class="addr">ul. Stefana Jaracza 2, 00-378 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-16">Sat, 2026-05-16</time> — 19:00</li>
+            <li><time datetime="2026-05-17">Sun, 2026-05-17</time> — 19:00</li>
+            <li><time datetime="2026-05-21">Thu, 2026-05-21</time> — 19:00</li>
+            <li><time datetime="2026-05-22">Fri, 2026-05-22</time> — 19:00</li>
+            <li><time datetime="2026-05-23">Sat, 2026-05-23</time> — 16:00</li>
+            <li><time datetime="2026-05-24">Sun, 2026-05-24</time> — 19:30</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://biletomat.pl/embedded/rezerwacja/340983" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Projekt Lucy</h3>
+        <p class="venue"><a href="https://tcn.at.edu.pl/" target="_blank" rel="noopener">Teatr Collegium Nobilium</a><span class="addr">ul. Miodowa 22/24, 00-246 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-09">Sat, 2026-05-09</time> — 18:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.at.edu.pl/nienumerowane.html?id=1573&amp;identyfikator=a47cc3ec7b24c3d47e5934d973063041" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Schody, schody, schody</h3>
+        <p class="venue"><a href="https://tcn.at.edu.pl/" target="_blank" rel="noopener">Teatr Collegium Nobilium</a><span class="addr">ul. Miodowa 22/24, 00-246 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-09">Sat, 2026-05-09</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.at.edu.pl/numerowane.html?id=1557&amp;identyfikator=6c8ad9581d277230d7aaa62c0ec53026" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Don Giovanni</h3>
+        <p class="venue"><a href="https://tcn.at.edu.pl/" target="_blank" rel="noopener">Teatr Collegium Nobilium</a><span class="addr">ul. Miodowa 22/24, 00-246 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-13">Wed, 2026-05-13</time> — 19:00</li>
+            <li><time datetime="2026-05-14">Thu, 2026-05-14</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.at.edu.pl/numerowane.html?id=1562&amp;identyfikator=3b340d0f11d4b0bf688f8ad70c837360" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Rózia</h3>
+        <p class="venue"><a href="https://tcn.at.edu.pl/" target="_blank" rel="noopener">Teatr Collegium Nobilium</a><span class="addr">ul. Miodowa 22/24, 00-246 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-15">Fri, 2026-05-15</time> — 19:30</li>
+            <li><time datetime="2026-05-16">Sat, 2026-05-16</time> — 19:30</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.at.edu.pl/nienumerowane.html?id=1555&amp;identyfikator=42c3893043271dc134d9a26696a44363" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Tango</h3>
+        <p class="venue"><a href="https://teatrpolski.waw.pl/" target="_blank" rel="noopener">Teatr Polski im. Arnolda Szyfmana</a><span class="addr">ul. Kazimierza Karasia 2, 00-327 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-10">Sun, 2026-05-10</time> — 17:00</li>
+            <li><time datetime="2026-05-12">Tue, 2026-05-12</time> — 19:00</li>
+            <li><time datetime="2026-05-13">Wed, 2026-05-13</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://teatr-polski.bilety24.pl/kup-bilety/?id=883479" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Dom otwarty</h3>
+        <p class="venue"><a href="https://teatrpolski.waw.pl/" target="_blank" rel="noopener">Teatr Polski im. Arnolda Szyfmana</a><span class="addr">ul. Kazimierza Karasia 2, 00-327 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-15">Fri, 2026-05-15</time> — 19:00</li>
+            <li><time datetime="2026-05-16">Sat, 2026-05-16</time> — 19:00</li>
+            <li><time datetime="2026-05-17">Sun, 2026-05-17</time> — 17:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://teatr-polski.bilety24.pl/kup-bilety/?id=883493" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Horacjusz</h3>
+        <p class="venue"><a href="https://teatrpolski.waw.pl/" target="_blank" rel="noopener">Teatr Polski im. Arnolda Szyfmana</a><span class="addr">ul. Kazimierza Karasia 2, 00-327 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-24">Sun, 2026-05-24</time> — 17:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://teatr-polski.bilety24.pl/kup-bilety/?id=883450" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+    </section>
+
+    <section id="musicals" class="category cat-musicals">
+      <h2>Musicals <span class="cat-pl">· Musicale</span></h2>
+
+      <article class="show">
+        <h3>Androidy</h3>
+        <p class="venue"><a href="https://teatrwielki.pl/" target="_blank" rel="noopener">Teatr Wielki — Opera Narodowa</a><span class="addr">Plac Teatralny 1, 00-950 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-10">Sun, 2026-05-10</time> — 18:00</li>
+            <li><time datetime="2026-05-12">Tue, 2026-05-12</time> — 19:00</li>
+            <li><time datetime="2026-05-13">Wed, 2026-05-13</time> — 19:00</li>
+            <li><time datetime="2026-05-14">Thu, 2026-05-14</time> — 12:00, 19:00</li>
+            <li><time datetime="2026-05-15">Fri, 2026-05-15</time> — 19:00</li>
+            <li><time datetime="2026-05-16">Sat, 2026-05-16</time> — 12:00, 19:00</li>
+            <li><time datetime="2026-05-17">Sun, 2026-05-17</time> — 18:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://butik.teatrwielki.pl/rezerwacja/miejsca.html?ter_id=5297&amp;ter_idt=75b292902595932a745b281e18624244&amp;extid=72884&amp;lang=pl" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Aniołki Mussoliniego</h3>
+        <p class="venue"><a href="https://www.teatrroma.pl/" target="_blank" rel="noopener">Teatr Muzyczny ROMA</a><span class="addr">ul. Nowogrodzka 49, 00-695 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-09">Sat, 2026-05-09</time> — 16:00</li>
+            <li><time datetime="2026-05-10">Sun, 2026-05-10</time> — 16:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrroma.pl/numerowane.html?id=7327" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>WICKED</h3>
+        <p class="venue"><a href="https://www.teatrroma.pl/" target="_blank" rel="noopener">Teatr Muzyczny ROMA</a><span class="addr">ul. Nowogrodzka 49, 00-695 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-09">Sat, 2026-05-09</time> — 15:00, 19:00</li>
+            <li><time datetime="2026-05-10">Sun, 2026-05-10</time> — 17:00</li>
+            <li><time datetime="2026-05-13">Wed, 2026-05-13</time> — 19:00</li>
+            <li><time datetime="2026-05-14">Thu, 2026-05-14</time> — 19:00</li>
+            <li><time datetime="2026-05-15">Fri, 2026-05-15</time> — 19:00</li>
+            <li><time datetime="2026-05-16">Sat, 2026-05-16</time> — 15:00, 19:00</li>
+            <li><time datetime="2026-05-17">Sun, 2026-05-17</time> — 17:00</li>
+            <li><time datetime="2026-05-20">Wed, 2026-05-20</time> — 12:00</li>
+            <li><time datetime="2026-05-21">Thu, 2026-05-21</time> — 19:00</li>
+            <li><time datetime="2026-05-22">Fri, 2026-05-22</time> — 19:00</li>
+            <li><time datetime="2026-05-23">Sat, 2026-05-23</time> — 15:00, 19:00</li>
+            <li><time datetime="2026-05-24">Sun, 2026-05-24</time> — 17:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrroma.pl/" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>SIX</h3>
+        <p class="venue"><a href="https://www.teatrsyrena.pl/" target="_blank" rel="noopener">Teatr Syrena</a><span class="addr">ul. Litewska 3, 00-589 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-09">Sat, 2026-05-09</time> — 19:00</li>
+            <li><time datetime="2026-05-10">Sun, 2026-05-10</time> — 15:00, 18:00</li>
+            <li><time datetime="2026-05-13">Wed, 2026-05-13</time> — 19:00</li>
+            <li><time datetime="2026-05-14">Thu, 2026-05-14</time> — 19:00</li>
+            <li><time datetime="2026-05-15">Fri, 2026-05-15</time> — 19:00</li>
+            <li><time datetime="2026-05-16">Sat, 2026-05-16</time> — 16:00, 19:00</li>
+            <li><time datetime="2026-05-17">Sun, 2026-05-17</time> — 15:00, 18:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrsyrena.pl/rezerwacja/numerowane.html?id=4882" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>MISTRZ I MAŁGORZATA — musical</h3>
+        <p class="venue"><a href="http://studiobuffo.com.pl/" target="_blank" rel="noopener">Studio Buffo</a><span class="addr">ul. Marii Konopnickiej 6, 00-491 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-09">Sat, 2026-05-09</time> — 14:00, 18:30</li>
+            <li><time datetime="2026-05-10">Sun, 2026-05-10</time> — 17:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.studiobuffo.pl/msi/?event_id=6890" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>ROMEO I JULIA — musical w 3D</h3>
+        <p class="venue"><a href="http://studiobuffo.com.pl/" target="_blank" rel="noopener">Studio Buffo</a><span class="addr">ul. Marii Konopnickiej 6, 00-491 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-20">Wed, 2026-05-20</time> — 19:00</li>
+            <li><time datetime="2026-05-21">Thu, 2026-05-21</time> — 12:00, 15:00</li>
+            <li><time datetime="2026-05-22">Fri, 2026-05-22</time> — 12:00, 15:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.studiobuffo.pl/msi/?event_id=6900" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>POLITA — musical w 3D o Poli Negri</h3>
+        <p class="venue"><a href="http://studiobuffo.com.pl/" target="_blank" rel="noopener">Studio Buffo</a><span class="addr">ul. Marii Konopnickiej 6, 00-491 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-23">Sat, 2026-05-23</time> — 19:00</li>
+            <li><time datetime="2026-05-24">Sun, 2026-05-24</time> — 17:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.studiobuffo.pl/msi/?event_id=6905" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>WIECZÓR BAŁKAŃSKI W BUFFO — koncert</h3>
+        <p class="venue"><a href="http://studiobuffo.com.pl/" target="_blank" rel="noopener">Studio Buffo</a><span class="addr">ul. Marii Konopnickiej 6, 00-491 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-12">Tue, 2026-05-12</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.studiobuffo.pl/msi/?event_id=6893" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>100 LAT POLSKIEJ PIOSENKI — koncert</h3>
+        <p class="venue"><a href="http://studiobuffo.com.pl/" target="_blank" rel="noopener">Studio Buffo</a><span class="addr">ul. Marii Konopnickiej 6, 00-491 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-13">Wed, 2026-05-13</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.studiobuffo.pl/msi/?event_id=6894" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>WIECZÓR WŁOSKI W BUFFO — koncert</h3>
+        <p class="venue"><a href="http://studiobuffo.com.pl/" target="_blank" rel="noopener">Studio Buffo</a><span class="addr">ul. Marii Konopnickiej 6, 00-491 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-14">Thu, 2026-05-14</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.studiobuffo.pl/msi/?event_id=6895" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>WIECZÓR FRANCUSKI W BUFFO — koncert</h3>
+        <p class="venue"><a href="http://studiobuffo.com.pl/" target="_blank" rel="noopener">Studio Buffo</a><span class="addr">ul. Marii Konopnickiej 6, 00-491 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-15">Fri, 2026-05-15</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.studiobuffo.pl/msi/?event_id=6896" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>WIECZÓR POLSKI — &quot;Upić się warto&quot; — koncert</h3>
+        <p class="venue"><a href="http://studiobuffo.com.pl/" target="_blank" rel="noopener">Studio Buffo</a><span class="addr">ul. Marii Konopnickiej 6, 00-491 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-16">Sat, 2026-05-16</time> — 16:00, 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.studiobuffo.pl/msi/?event_id=6897" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>WIECZÓR LATYNOSKI W BUFFO — koncert</h3>
+        <p class="venue"><a href="http://studiobuffo.com.pl/" target="_blank" rel="noopener">Studio Buffo</a><span class="addr">ul. Marii Konopnickiej 6, 00-491 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-17">Sun, 2026-05-17</time> — 17:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.studiobuffo.pl/msi/?event_id=6899" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>HITY BUFFO — koncert</h3>
+        <p class="venue"><a href="http://studiobuffo.com.pl/" target="_blank" rel="noopener">Studio Buffo</a><span class="addr">ul. Marii Konopnickiej 6, 00-491 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-18">Mon, 2026-05-18</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.studiobuffo.pl/msi/?event_id=6910" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Traviata</h3>
+        <p class="venue"><a href="https://teatrwielki.pl/" target="_blank" rel="noopener">Teatr Wielki — Opera Narodowa</a><span class="addr">Plac Teatralny 1, 00-950 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-23">Sat, 2026-05-23</time> — 19:00</li>
+            <li><time datetime="2026-05-24">Sun, 2026-05-24</time> — 18:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://butik.teatrwielki.pl/rezerwacja/miejsca.html?ter_id=5309&amp;ter_idt=b5b86b909c67fae1457a59bf4b518454&amp;extid=72753&amp;lang=pl" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+    </section>
+
+    <section id="other" class="category cat-other">
+      <h2>Other <span class="cat-pl">· Inne</span></h2>
+
+      <article class="show">
+        <h3>Filipka Rutkowska — &quot;Niesamowite przygody baronessy Munchausen&quot;</h3>
+        <p class="venue"><a href="https://teatrstudio.pl/pl/" target="_blank" rel="noopener">Teatr Studio</a><span class="addr">Pałac Kultury i Nauki, pl. Defilad 1, 00-901 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-12">Tue, 2026-05-12</time> — 20:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.teatrstudio.pl/nienumerowane.html?ter_id=3913&amp;ter_idt=ae2d1bc25a29f924dee08608f9e69433" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>Thriller</h3>
+        <p class="venue"><a href="https://nowyteatr.org/pl" target="_blank" rel="noopener">Nowy Teatr</a><span class="addr">ul. Madalińskiego 10/16, 02-513 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-13">Wed, 2026-05-13</time> — 18:30</li>
+            <li><time datetime="2026-05-14">Thu, 2026-05-14</time> — 11:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://bilety.nowyteatr.org/nienumerowane.html?id=3021&amp;idt=0862ff6ce00c71e765443d9ddeb46319" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+      <article class="show">
+        <h3>MONOLOG WEWNĘTRZNY</h3>
+        <p class="venue"><a href="https://komuna.warszawa.pl/" target="_blank" rel="noopener">Teatr Komuna Warszawa</a><span class="addr">ul. Emilii Plater 31, 00-688 Warszawa</span></p>
+        <div class="dates">
+          <p class="label">Dates and times <span class="label-pl">· Daty i godziny</span></p>
+          <ul class="datelist">
+            <li><time datetime="2026-05-15">Fri, 2026-05-15</time> — 19:00</li>
+          </ul>
+        </div>
+        <p class="cta"><a class="btn" href="https://komuna.warszawa.pl/bilety" target="_blank" rel="noopener">Buy tickets → <span class="btn-pl">Kup bilety</span></a></p>
+      </article>
+
+    </section>
+
+  </main>
+
+  <section class="notes">
+    <h2>Notes · Uwagi</h2>
+    <div class="notes-en">
+      <h3>EN</h3>
+      <ul>
+        <li>Sweep covered the four PL ticket aggregators (ebilet, biletomat, biletyna, kupbilecik) plus 14 named theaters and the Wikipedia long tail. ebilet.pl was the only aggregator that returned usable in-window listings — biletomat returned HTTP 403, biletyna's listings only showed pre-window/sold-out events, and kupbilecik returned 404/truncated pages.</li>
+        <li>Teatr Powszechny im. Zygmunta Hübnera, Och-Teatr (ul. Grójecka 65) and Teatr Polonia (ul. Marszałkowska 56) websites are JS-rendered with month-pickers that webcrawl can't follow — confirmed in-window dates could not be enumerated. If those venues interest you, please check their repertoire pages directly.</li>
+        <li>Teatr IMKA (imka.org.pl) was unreachable during the sweep (offline / 404).</li>
+        <li>Teatr Rampa was unreachable (ECONNREFUSED on every URL variant tried).</li>
+        <li>Teatr Capitol Warszawa: only in-window date found was Boeing Boeing on 2026-05-09 — sold out, dropped.</li>
+        <li>Sold-out / cancelled dates were excluded from each show's date list (e.g. Teatr Dramatyczny &quot;ERA WODNIKA&quot; 2026-05-09 cancelled; Teatr Studio &quot;The Employees&quot; 2026-05-16/17 sold out; Teatr Współczesny &quot;Chłopki&quot; 2026-05-14 sold out; Teatr Syrena &quot;SIX&quot; 2026-05-09 16:00 sold out).</li>
+        <li>Studio Buffo's themed &quot;Wieczór ...&quot; concerts and &quot;Hity Buffo&quot; are placed under MUSICALS because Studio Buffo is a dedicated musical-theatre stage; classify them as concert/cabaret programming if you treat the section more strictly.</li>
+        <li>Teatr 6. Piętro shows are tagged medium confidence — booking pages were verified, but the venue's address is inferred from public knowledge (Pałac Kultury i Nauki); confirm on the theater's contact page if precision matters.</li>
+        <li>A children's musical &quot;Friends&quot; at Teatr Capitol on 2026-05-10 11:00 (ages 8-18) was excluded as not adult-targeted.</li>
+      </ul>
+    </div>
+    <div class="notes-pl">
+      <h3>PL</h3>
+      <ul>
+        <li>Przeszukano cztery polskie agregatory biletowe (ebilet, biletomat, biletyna, kupbilecik) oraz 14 nazwanych teatrów warszawskich i tzw. „ogon&quot; z listy Wikipedii. Spośród agregatorów tylko ebilet.pl zwrócił użyteczne wyniki w naszym oknie — biletomat odpowiadał błędem 403, biletyna pokazywała głównie wydarzenia sprzed okna lub wyprzedane, a kupbilecik zwracał strony 404/skrócone.</li>
+        <li>Strony Teatru Powszechnego im. Zygmunta Hübnera, Och-Teatru (ul. Grójecka 65) i Teatru Polonia (ul. Marszałkowska 56) używają miesięcznego JS-pickera, którego crawler nie potrafi prześledzić — repertuar w naszym oknie nie został z nich pozyskany. Jeśli interesują Cię te sceny, sprawdź repertuar bezpośrednio na ich stronach.</li>
+        <li>Strona Teatru IMKA (imka.org.pl) była w czasie wyszukiwania niedostępna (offline / 404).</li>
+        <li>Strona Teatru Rampa była niedostępna (ECONNREFUSED na każdej próbowanej domenie).</li>
+        <li>Teatr Capitol Warszawa: jedyna data w oknie to Boeing Boeing 2026-05-09 — wyprzedane, pominięte.</li>
+        <li>Daty wyprzedane lub odwołane wyłączono z listy każdego spektaklu (m.in. Teatr Dramatyczny „ERA WODNIKA&quot; 2026-05-09 — odwołane; Teatr Studio „The Employees&quot; 2026-05-16/17 wyprzedane; Teatr Współczesny „Chłopki&quot; 2026-05-14 wyprzedane; Teatr Syrena „SIX&quot; 2026-05-09 16:00 wyprzedane).</li>
+        <li>Tematyczne koncerty „Wieczór ...&quot; oraz „Hity Buffo&quot; w Studiu Buffo umieszczono w sekcji MUSICALE, ponieważ Studio Buffo to dedykowana scena musicalowa; jeśli traktujesz tę kategorię ściślej, potraktuj je jako programowanie koncertowo-kabaretowe.</li>
+        <li>Spektakle Teatru 6. Piętro mają średnią pewność — strony rezerwacji zostały zweryfikowane, ale adres sceny (Pałac Kultury i Nauki) został przyjęty z wiedzy publicznej; w razie potrzeby precyzyjnego potwierdzenia sprawdź kontakt na stronie teatru.</li>
+        <li>Dziecięcy musical „Friends&quot; w Teatrze Capitol 2026-05-10 11:00 (8-18 lat) został pominięty jako spektakl niekierowany do widowni dorosłej.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>Generated 2026-05-06 · Sources: theater websites and <a href="https://www.ebilet.pl/teatr/miasto/warszawa" target="_blank" rel="noopener">ebilet.pl</a>, <a href="https://biletomat.pl/wydarzenia/teatry" target="_blank" rel="noopener">biletomat.pl</a>, <a href="https://biletyna.pl/spektakl" target="_blank" rel="noopener">biletyna.pl</a>, <a href="https://www.kupbilecik.pl/spektakle/" target="_blank" rel="noopener">kupbilecik.pl</a></p>
+  </footer>
+</body>
+</html>
